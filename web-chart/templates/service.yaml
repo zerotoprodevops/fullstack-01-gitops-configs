@@ -6,4 +6,4 @@ spec:
   selector:
     app: web
   ports:
-    port: {{ .Values.service.port }}    
+    - port: {{ .Values.service.port }}    

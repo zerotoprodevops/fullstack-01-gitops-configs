@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: backend-api
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/zerotoprodevops/fullstack-01-gitops-configs.git
+    targetRevision: main
+    path: 'api-chart'
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      enabled: true
+      selfHeal: true    
+
