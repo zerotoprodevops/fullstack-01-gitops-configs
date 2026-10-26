@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repo: jyotimanab/fullstack-01-mongo-node-web
+  repository: jyotimanab/fullstack-01-mongo-node-web
   tag: "latest"
 
 service:
