@@ -12,13 +12,13 @@ spec:
   template:
     metadata:
       name: pod-frontEnd
-      lables:
+      labels:
         app: web
         type: frontend
     spec:      
       containers:
         - name: cont-web
-          image:  "{{ .Values.image.repo }}:{{ .Values.image.tag }}"
-          port:
-            containerPort: 3000      
+          image:  "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          ports:
+            - containerPort: 3000      
 
