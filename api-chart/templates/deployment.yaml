@@ -20,6 +20,6 @@ spec:
       containers:
         - name: api
           image: "{{ .Values.image.repo }}:{{ .Values.image.tag }}"
-          port:
-            containerPort: 3000    
+          ports:
+            - containerPort: 3000    
 
