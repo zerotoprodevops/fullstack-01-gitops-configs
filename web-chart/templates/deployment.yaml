@@ -10,14 +10,15 @@ spec:
     matchLabels:
       app: web
   template:
-    spec:
+    metadata:
       name: pod-frontEnd
       lables:
         app: web
         type: frontend
-    containers:
-      - name: cont-web
-        image:  "{{ .Values.image.repo }}:{{ .Values.image.tag }}"
-        port:
-          containerPort: 3000      
+    spec:      
+      containers:
+        - name: cont-web
+          image:  "{{ .Values.image.repo }}:{{ .Values.image.tag }}"
+          port:
+            containerPort: 3000      
 
