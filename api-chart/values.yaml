@@ -1,0 +1,7 @@
+replicaCount : 1
+image:
+  repo: jyotimanab/fullstack-01-mongo-node-api
+  tag: latest
+service:
+  port: 3000  
+

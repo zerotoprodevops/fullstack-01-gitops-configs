@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name:  web-deployment
+
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: web
+  template:
+    spec:
+      name: pod-frontEnd
+      lables:
+        app: web
+        type: frontend
+    containers:
+      - name: cont-web
+        image:  "{{ .Values.image.repo }}:{{ .Values.image.tag }}"
+        port:
+          containerPort: 3000      
+

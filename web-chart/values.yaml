@@ -1,0 +1,13 @@
+replicaCount: 1
+
+image:
+  repo: jyotimanab/fullstack-01-mongo-node-web
+  tag: "latest"
+
+service:
+  port: 3000
+
+ingress:
+  host: "web.my-app.local"
+
+
