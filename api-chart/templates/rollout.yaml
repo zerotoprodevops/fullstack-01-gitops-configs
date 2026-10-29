@@ -5,6 +5,7 @@ metadata:
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
+    app: api
   template:
     metadata:
       labels:
