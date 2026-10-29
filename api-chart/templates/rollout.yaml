@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata: 
+  name: api-rollout
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+        - name: api
+          image: {{ .Values.image.repo  }}
+          ports:
+            - containerPort: 3000
+  strategy:
+    blueGreen:
+      activeService: api-service-active
+      previewService: api-service-preview
+      autoPromotionEnabled: false                
