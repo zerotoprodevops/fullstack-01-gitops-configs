@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: jyotimanab/fullstack-01-mongo-node-web
-  tag: "8"
+  tag: "9"
 
 service:
   port: 3000
